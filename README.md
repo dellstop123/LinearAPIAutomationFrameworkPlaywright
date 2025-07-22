@@ -26,9 +26,38 @@ apiAutomation/
 │
 ├── db.json             # Mock data for json-server
 ├── package.json        # Project dependencies and scripts
+├── .gitignore          # Git ignore rules
 ├── README.md           # This documentation
 └── ...
 ```
+
+---
+
+## Structure Design
+- **API Layer (`api/`):** Contains classes for each API resource (e.g., PaymentsAPI, RefundsAPI). Each class encapsulates all related endpoints as methods, following the Page Object Model (POM) pattern for APIs.
+- **Test Layer (`tests/`):** Contains Playwright test files that use the API classes to perform and validate API operations. Tests are organized by resource and scenario.
+- **Mock Data (`db.json`):** Provides a local, editable data source for the mock server, simulating real API responses.
+- **Reports & Results:** Playwright generates HTML and list reports for each test run, stored in `playwright-report/` and `test-results/` (ignored by git).
+
+---
+
+## Automation Scenarios Tested
+The following scenarios are covered in the test suite:
+
+### Payments
+- **Create Payment:** Validates creation of a new payment with required fields.
+- **Get Payment:** Retrieves payment details by ID and validates the response.
+- **List Payments:** Fetches all payments and checks for correct structure.
+- **Update Payment:** Updates payment details and verifies the update.
+- **Delete Payment:** Deletes a payment and ensures it is removed.
+- **Negative - Get Non-existent Payment:** Ensures 404 is returned for missing payment.
+- **Negative - Update with Invalid Data:** Attempts to update with invalid data and checks for error handling.
+
+### Refunds
+- **Create Refund:** Issues a refund for a payment and validates the response.
+- **Get Refund:** Retrieves refund details by ID and validates the response.
+- **List Refunds:** Fetches all refunds and checks for correct structure.
+- **Negative - Refund Non-existent Payment:** Attempts to refund a non-existent payment and checks for error handling.
 
 ---
 
