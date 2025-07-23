@@ -178,18 +178,6 @@
     {
       "amount": -100,
       "id": "6626"
-    },
-    {
-      "id": "519d",
-      "amount": 1000,
-      "source": "card_visa",
-      "description": "Modular create test"
-    },
-    {
-      "id": "9852",
-      "amount": 500,
-      "source": "card_mastercard",
-      "description": "Refund modular test"
     }
   ],
   "refunds": [
@@ -327,11 +315,6 @@
       "id": "99ab",
       "payment_id": 99999,
       "amount": 100
-    },
-    {
-      "id": "2575",
-      "payment_id": "9852",
-      "amount": 500
     }
   ]
 }
